@@ -1,11 +1,13 @@
-import styled from "styled-components";
+import Globalstyles from "./components/Globalstyles";
+import Router from "./Router";
 
 const App = () => {
-  return <Block>App</Block>;
+  return (
+    <>
+      <Globalstyles />
+      <Router />
+    </>
+  );
 };
-
-const Block = styled.div`
-  background-color: pink;
-`;
 
 export default App;
