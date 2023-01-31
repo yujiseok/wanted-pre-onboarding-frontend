@@ -1,4 +1,13 @@
+import AuthForm from "../../components/AuthForm";
+import Heading from "../../components/Heading";
+
 const SignUp = () => {
-  return <div>회원가입</div>;
+  return (
+    <>
+      <Heading title="회원가입" />
+      <AuthForm mode="signup" />
+    </>
+  );
 };
+
 export default SignUp;
