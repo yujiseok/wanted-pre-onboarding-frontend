@@ -62,6 +62,7 @@ const ActionWrapper = styled.div`
   display: flex;
   gap: 8px;
   margin-top: 16px;
+  align-items: center;
 `;
 
 export default AuthForm;
