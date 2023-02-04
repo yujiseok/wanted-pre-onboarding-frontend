@@ -2,7 +2,15 @@ import { useState } from "react";
 import styled from "styled-components";
 import Input from "./Input";
 
-const LabelInput = ({ label, placeholder, type }) => {
+const LabelInput = ({
+  label,
+  placeholder,
+  type,
+  id,
+  user,
+  setUser,
+  handleFocus,
+}) => {
   const [focused, setFocused] = useState(false);
 
   const onFocus = () => setFocused(true);
@@ -10,15 +18,17 @@ const LabelInput = ({ label, placeholder, type }) => {
 
   return (
     <Wrapper>
-      <Label focused={focused} htmlFor={type}>
+      <Label focused={focused} htmlFor={id}>
         {label}
       </Label>
       <Input
-        id={type}
+        id={id}
+        name={id}
         placeholder={placeholder}
-        onFocus={onFocus}
-        onBlur={onBlur}
         type={type}
+        user={user}
+        handleFocus={handleFocus}
+        setUser={setUser}
       />
     </Wrapper>
   );

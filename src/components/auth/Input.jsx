@@ -1,13 +1,23 @@
 import styled from "styled-components";
 
-const Input = ({ type, placeholder, onFocus, onBlur }) => {
+const Input = ({ type, placeholder, id, user, setUser, handleFocus }) => {
+  const onChange = (e) => {
+    const { name, value } = e.target;
+
+    setUser({ ...user, [name]: value });
+  };
+
   return (
     <StyledInput
       type={type}
-      id={type}
+      id={id}
       placeholder={placeholder}
       // onFocus={onFocus}
-      // onBlur={onBlur}
+      onFocus={handleFocus}
+      name={id}
+      onChange={onChange}
+      value={user[id]}
+      data-testid={`${id}-input`}
     />
   );
 };

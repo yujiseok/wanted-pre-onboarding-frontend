@@ -5,7 +5,7 @@ const Heading = ({ title }) => {
 };
 
 const StyledHeading = styled.h2`
-  margin-bottom: 16px;
+  /* padding-bottom: 16px; */
 `;
 
 export default Heading;
