@@ -9,12 +9,18 @@ const Globalstyles = createGlobalStyle`
   }
 
   body {
-    background-color: #FFF5E4;
+    background-color: #fdba74;
   }
-
 
   button {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+  }
+  
+  input {
+    font-family: inherit;
   }
 
   ul, li {

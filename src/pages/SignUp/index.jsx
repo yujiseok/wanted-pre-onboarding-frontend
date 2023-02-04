@@ -1,13 +1,20 @@
-import AuthForm from "../../components/AuthForm";
-import Heading from "../../components/Heading";
+import styled from "styled-components";
+import AuthForm from "../../components/auth/AuthForm";
+import Heading from "../../components/common/Heading";
 
 const SignUp = () => {
   return (
     <>
-      <Heading title="회원가입" />
+      <Header>
+        <Heading title="회원가입" />
+      </Header>
       <AuthForm mode="signup" />
     </>
   );
 };
+
+const Header = styled.header`
+  margin-bottom: 20px;
+`;
 
 export default SignUp;
