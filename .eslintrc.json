@@ -15,6 +15,7 @@
   },
   "plugins": ["react"],
   "rules": {
+    "no-param-reassign": "off",
     "import/no-extraneous-dependencies": ["off"],
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
