@@ -23,7 +23,7 @@ const Input = ({ type, placeholder, id, user, setUser, handleFocus }) => {
 };
 
 const StyledInput = styled.input`
-  padding: 8px 4px;
+  padding: 8px;
   border: 1px solid #777;
   border-radius: 4px;
   font-size: 16px;
