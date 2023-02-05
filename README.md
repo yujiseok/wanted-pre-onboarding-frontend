@@ -4,7 +4,7 @@
 
 ---
 
-## [배포주소](https://wpo-todo-app.vercel.app)
+## [배포주소](https://wpo-jiseok-todo.vercel.app)
 
 ## 실행 방법
 
