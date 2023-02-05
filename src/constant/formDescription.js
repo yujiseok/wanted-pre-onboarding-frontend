@@ -13,6 +13,6 @@ export const authDescription = {
     buttonText: "회원가입",
     actionText: "로그인",
     question: "계정이 이미 있으신가요?",
-    actionLink: "/",
+    actionLink: "/signin",
   },
 };

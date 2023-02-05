@@ -11,7 +11,10 @@ import { todoContext, TODO_ACTION_TYPE } from "../../context/TodoProvider";
 
 const Todo = () => {
   const { dispatch } = useContext(todoContext);
-  const { state, dispatch: authDispatch } = useContext(authContext);
+  const {
+    state: { token },
+    dispatch: authDispatch,
+  } = useContext(authContext);
   const [todoTitle, setTodoTitle] = useState("");
 
   const navigate = useNavigate();
@@ -23,27 +26,26 @@ const Todo = () => {
     if (res.status === 201) {
       dispatch({ type: TODO_ACTION_TYPE.POST, todo: res.data });
       setTodoTitle("");
-      // inputRef.current.focus();
     }
   };
 
-  const handleClick = () => {
+  const handleClickLogOut = () => {
     authDispatch({
       type: AUTH_ACTION.RESET_TOKEN,
     });
   };
 
   useEffect(() => {
-    if (!state.token) {
-      navigate("/");
+    if (!token) {
+      navigate("/signin");
     }
-  }, [state]);
+  }, [token]);
 
   return (
     <div>
       <Header>
         <Heading title="Todo ✔️" />
-        <Button type="button" onClick={handleClick}>
+        <Button type="button" onClick={handleClickLogOut}>
           로그아웃
         </Button>
       </Header>
@@ -62,7 +64,7 @@ const Todo = () => {
           disabled={todoTitle.length < 1}
           data-testid="new-todo-add-button"
         >
-          <span>제출</span>
+          제출
         </Button>
       </Form>
     </div>

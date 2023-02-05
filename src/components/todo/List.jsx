@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { deleteTodo, updateTodo } from "../../api";
 import { TODO_ACTION_TYPE } from "../../context/TodoProvider";
@@ -11,6 +11,7 @@ const List = ({ todo: { todo, id, isCompleted }, dispatch }) => {
   const handleEditClick = () => setIsEditing((prev) => !prev);
 
   const handleCheckBox = async (id, title, isCompleted) => {
+    // 에러?
     const res = await updateTodo(id, title, !isCompleted);
 
     if (res.status === 200) {
@@ -57,16 +58,23 @@ const List = ({ todo: { todo, id, isCompleted }, dispatch }) => {
             value={editedTitle}
             onChange={handleChange}
             autoFocus
+            data-testid="modify-input"
           />
         </div>
         <ButtonWrapper>
           <Button
             type="button"
             onClick={() => handleUpdate(id, editedTitle, isCompleted)}
+            data-testid="submit-button"
+            // disabled={editedTitle}
           >
             ✔️
           </Button>
-          <Button type="button" onClick={handleEditClick}>
+          <Button
+            type="button"
+            onClick={handleEditClick}
+            data-testid="cancel-button"
+          >
             ❌
           </Button>
         </ButtonWrapper>
