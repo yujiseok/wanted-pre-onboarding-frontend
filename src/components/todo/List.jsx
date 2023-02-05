@@ -162,4 +162,4 @@ const Button = styled.button`
   font-size: 16px;
 `;
 
-export default memo(List);
+export default List;
