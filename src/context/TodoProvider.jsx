@@ -7,7 +7,6 @@ export const TODO_ACTION_TYPE = {
   POST: "POST",
   UPDATE: "UPDATE",
   DELETE: "DELETE",
-  COMPLETE: "COMPLETE",
 };
 
 const initialState = [];
@@ -22,12 +21,6 @@ const reducer = (state, action) => {
       return state.map((todo) =>
         todo.id === action.id ? { ...action.todo } : todo,
       );
-    case TODO_ACTION_TYPE.COMPLETE:
-      return state.map((todo) => {
-        return todo.id === action.id
-          ? { ...todo, isCompleted: !todo.isCompleted }
-          : todo;
-      });
     case TODO_ACTION_TYPE.DELETE:
       return state.filter((todo) => todo.id !== action.id);
 
