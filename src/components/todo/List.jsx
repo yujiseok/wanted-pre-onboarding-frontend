@@ -11,7 +11,6 @@ const List = ({ todo: { todo, id, isCompleted }, dispatch }) => {
   const handleEditClick = () => setIsEditing((prev) => !prev);
 
   const handleCheckBox = async (id, title, isCompleted) => {
-    // 에러?
     const res = await updateTodo(id, title, !isCompleted);
 
     if (res.status === 200) {
@@ -66,7 +65,6 @@ const List = ({ todo: { todo, id, isCompleted }, dispatch }) => {
             type="button"
             onClick={() => handleUpdate(id, editedTitle, isCompleted)}
             data-testid="submit-button"
-            // disabled={editedTitle}
           >
             ✔️
           </Button>
@@ -134,12 +132,9 @@ const CheckInputWrapper = styled.div`
   gap: 8px;
 
   input[type="checkbox"] {
-    /* -webkit-appearance: none; */
     cursor: pointer;
-    /* padding: 2px; */
     width: 16px;
     height: 16px;
-    background-color: #fb923c;
     border: 2px solid #9ca3af;
     border-radius: 2px;
   }

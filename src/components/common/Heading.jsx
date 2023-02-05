@@ -4,8 +4,6 @@ const Heading = ({ title }) => {
   return <StyledHeading>{title}</StyledHeading>;
 };
 
-const StyledHeading = styled.h2`
-  /* padding-bottom: 16px; */
-`;
+const StyledHeading = styled.h2``;
 
 export default Heading;
