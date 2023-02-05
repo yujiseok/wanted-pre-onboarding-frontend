@@ -11,16 +11,9 @@ const LabelInput = ({
   setUser,
   handleFocus,
 }) => {
-  const [focused, setFocused] = useState(false);
-
-  const onFocus = () => setFocused(true);
-  const onBlur = () => setFocused(false);
-
   return (
     <Wrapper>
-      <Label focused={focused} htmlFor={id}>
-        {label}
-      </Label>
+      <Label htmlFor={id}>{label}</Label>
       <Input
         id={id}
         name={id}
@@ -41,7 +34,6 @@ const Wrapper = styled.div`
 `;
 
 const Label = styled.label`
-  color: ${(props) => (props.focused ? "pink" : "black")};
   font-size: 18px;
   font-weight: 600;
 `;

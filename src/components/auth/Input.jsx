@@ -12,7 +12,6 @@ const Input = ({ type, placeholder, id, user, setUser, handleFocus }) => {
       type={type}
       id={id}
       placeholder={placeholder}
-      // onFocus={onFocus}
       onFocus={handleFocus}
       name={id}
       onChange={onChange}
