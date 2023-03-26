@@ -96,7 +96,7 @@ const AuthForm = ({ mode }) => {
           setUser={setUser}
           handleFocus={handleFocus}
         />
-        {user.password.length < 7 && focus.password ? (
+        {user.password.length < 8 && focus.password ? (
           <ErrorMessage>8자 이상의 비밀번호를 입력하세요.</ErrorMessage>
         ) : null}
       </InputWrapper>
